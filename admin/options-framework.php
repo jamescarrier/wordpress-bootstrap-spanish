@@ -359,7 +359,7 @@ function optionsframework_adminbar() {
 	$wp_admin_bar->add_menu( array(
 		'parent' => 'appearance',
 		'id' => 'of_theme_options',
-		'title' => __( 'Las Opciones','optionsframework' ),
+		'title' => __( 'Opciones del Tema','optionsframework' ),
 		'href' => admin_url( 'themes.php?page=options-framework' )
   ));
 }
