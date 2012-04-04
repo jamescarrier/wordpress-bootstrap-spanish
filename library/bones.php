@@ -49,7 +49,7 @@ function bones_queue_js(){ if (!is_admin()){ if ( is_singular() AND comments_ope
 function bones_excerpt_more($more) {
 	global $post;
 	// edit here if you like
-	return '...  <a href="'. get_permalink($post->ID) . '" class="more-link" title="Read '.get_the_title($post->ID).'">Read more &raquo;</a>';
+	return '...  <a href="'. get_permalink($post->ID) . '" class="more-link" title="Leer '.get_the_title($post->ID).'">Seguir leyendo &raquo;</a>';
 }
 add_filter('excerpt_more', 'bones_excerpt_more');
 	
@@ -78,7 +78,7 @@ function bones_theme_support() {
 	register_nav_menus(                      // wp3+ menus
 		array( 
 			'main_nav' => 'The Main Menu',   // main nav in header
-			'footer_links' => 'Footer Links' // secondary nav in footer
+			'footer_links' => 'Enlaces del pie de Página' // secondary nav in footer
 		)
 	);	
 }
@@ -148,10 +148,11 @@ function bones_related_posts() {
         $related_posts = get_posts($args);
         if($related_posts) {
         	foreach ($related_posts as $post) : setup_postdata($post); ?>
-	           	<li class="related_post"><a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
+	           	<li class="related_post">
+					<a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
 	        <?php endforeach; } 
 	    else { ?>
-            <li class="no_related_post">No Related Posts Yet!</li>
+            <li class="no_related_post">No hay posts relacionados a&uacute;n!</li>
 		<?php }
 	}
 	wp_reset_query();
@@ -193,12 +194,12 @@ function page_navi($before = '', $after = '') {
 	echo $before.'<div class="pagination"><ul class="clearfix">'."";
 	if ($paged > 1) {
 		$first_page_text = "&laquo";
-		echo '<li class="prev"><a href="'.get_pagenum_link().'" title="First">'.$first_page_text.'</a></li>';
+		echo '<li class="prev"><a href="'.get_pagenum_link().'" title="Primera">'.$first_page_text.'</a></li>';
 	}
 		
-	$prevposts = get_previous_posts_link('&larr; Previous');
+	$prevposts = get_previous_posts_link('&larr; Anterior');
 	if($prevposts) { echo '<li>' . $prevposts  . '</li>'; }
-	else { echo '<li class="disabled"><a href="#">&larr; Previous</a></li>'; }
+	else { echo '<li class="disabled"><a href="#">&larr; Anterior</a></li>'; }
 	
 	for($i = $start_page; $i  <= $end_page; $i++) {
 		if($i == $paged) {
@@ -208,7 +209,7 @@ function page_navi($before = '', $after = '') {
 		}
 	}
 	echo '<li class="">';
-	next_posts_link('Next &rarr;');
+	next_posts_link('Siguiente &rarr;');
 	echo '</li>';
 	if ($end_page < $max_page) {
 		$last_page_text = "&raquo;";
@@ -223,8 +224,5 @@ function filter_ptags_on_images($content){
 }
 
 add_filter('the_content', 'filter_ptags_on_images');
-
-
-	
 
 ?>

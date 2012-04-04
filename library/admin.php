@@ -59,7 +59,7 @@ function bones_rss_dashboard_widget() {
 		$limit = $feed->get_item_quantity(7);                      // specify number of items
 		$items = $feed->get_items(0, $limit);                      // create an array of items
 	}
-	if ($limit == 0) echo '<div>The RSS Feed is either empty or unavailable.</div>';   // fallback message 
+	if ($limit == 0) echo '<div>El Feed RSS está vacío o no disponible</div>';   // fallback message 
 	else foreach ($items as $item) : ?>
 
 	<h4 style="margin-bottom: 0;">
@@ -75,7 +75,7 @@ function bones_rss_dashboard_widget() {
 
 // calling all custom dashboard widgets
 function bones_custom_dashboard_widgets() {
-	wp_add_dashboard_widget('bones_rss_dashboard_widget', 'Recently on Themble (Customize on admin.php)', 'bones_rss_dashboard_widget');
+	wp_add_dashboard_widget('bones_rss_dashboard_widget', 'Recientemente en Themble (Personalizar en admin.php)', 'bones_rss_dashboard_widget');
 	/*
 	Be sure to drop any other created Dashboard Widgets 
 	in this function and they will all load.
@@ -120,9 +120,10 @@ you like.
 
 // Custom Backend Footer
 function bones_custom_admin_footer() {
-	echo '<span id="footer-thankyou">Developed by <a href="http://yoursite.com" target="_blank">Your Site Name</a></span>. Built using <a href="http://themble.com/bones" target="_blank">Bones</a>.';
+	echo '<span id="footer-thankyou">
+		Desarrollador por <a href="http://yoursite.com" target="_blank">Tu sitio web</a></span>. 
+		Constru&iacute;do con <a href="http://themble.com/bones" target="_blank">Bones</a>.';
 }
 
 // adding it to the admin area
 add_filter('admin_footer_text', 'bones_custom_admin_footer');
-

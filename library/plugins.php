@@ -41,7 +41,7 @@ function bones_add_user_fields( $contactmethods ) {
 	// Add Twitter
 	$contactmethods['user_tw'] = 'Twitter';
 	// Add Google+
-	$contactmethods['google_profile'] = 'Google Profile URL';
+	$contactmethods['google_profile'] = 'URL del perfil de Google';
 	// Save 'Em
 	return $contactmethods;
 }
