@@ -344,7 +344,7 @@ function optionsframework_fields() {
 			}
 
 			$output .= '<div class="' . esc_attr( $class ) . '">' . "\n";
-			$output .= '<a id="check-bootswatch" class="button-secondary">Refresh themes</a>';
+			$output .= '<a id="check-bootswatch" class="button-secondary">Actualizar temas</a>';
 			$output .= '<div id="check-status"></div>';
 			$output .= '</div>';
 			break;

@@ -23,7 +23,7 @@ if ( ! function_exists( 'optionsframework_mlu_init' ) ) {
 	function optionsframework_mlu_init () {
 		register_post_type( 'optionsframework', array(
 			'labels' => array(
-				'name' => __( 'Options Framework Internal Container','optionsframework' ),
+				'name' => __( 'Contenedor Interno del Framework de Opciones','optionsframework' ),
 			),
 			'public' => true,
 			'show_ui' => false,
@@ -125,7 +125,7 @@ if ( ! function_exists( 'optionsframework_medialibrary_uploader' ) ) {
 		
 		if ( $value ) { $class = ' has-file'; }
 		$output .= '<input id="' . $id . '" class="upload' . $class . '" type="text" name="'.$name.'" value="' . $value . '" />' . "\n";
-		$output .= '<input id="upload_' . $id . '" class="upload_button button" type="button" value="' . __( 'Upload','optionsframework' ) . '" rel="' . $int . '" />' . "\n";
+		$output .= '<input id="upload_' . $id . '" class="upload_button button" type="button" value="' . __( 'Subir','optionsframework' ) . '" rel="' . $int . '" />' . "\n";
 		
 		if ( $_desc != '' ) {
 			$output .= '<span class="of_metabox_desc">' . $_desc . '</span>' . "\n";
@@ -250,13 +250,14 @@ if ( ! function_exists( 'optionsframework_mlu_js_popup' ) ) {
 		// Change the title of each tab to use the custom title text instead of "Media File".
 		$( 'h3.media-title' ).each ( function () {
 			var current_title = $( this ).html();
-			var new_title = current_title.replace( 'media file', '<?php echo $_of_title; ?>' );
+			//var new_title = current_title.replace( 'media file', '<?php echo $_of_title; ?>' );
+			var new_title = current_title.replace( 'archivo multimedia', '<?php echo $_of_title; ?>' );
 			$( this ).html( new_title );
 		
 		} );
 		
 		// Change the text of the "Insert into Post" buttons to read "Use this File".
-		$( '.savesend input.button[value*="Insert into Post"], .media-item #go_button' ).attr( 'value', 'Use this File' );
+		$( '.savesend input.button[value*="Insert into Post"], .media-item #go_button' ).attr( 'value', 'Usar este archivo' );
 		
 		// Hide the "Insert Gallery" settings box on the "Gallery" tab.
 		$( 'div#gallery-settings' ).hide();
@@ -285,7 +286,7 @@ if ( ! function_exists( 'optionsframework_mlu_js_popup' ) ) {
 if ( ! function_exists( 'optionsframework_mlu_modify_tabs' ) ) {
 
 	function optionsframework_mlu_modify_tabs ( $tabs ) {
-		$tabs['gallery'] = str_replace( __( 'Gallery', 'optionsframework' ), __( 'Previously Uploaded', 'optionsframework' ), $tabs['gallery'] );
+		$tabs['gallery'] = str_replace( __( 'Galería', 'optionsframework' ), __( 'Anteriormente Subida', 'optionsframework' ), $tabs['gallery'] );
 		return $tabs;
 	}
 }
