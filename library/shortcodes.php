@@ -1,10 +1,10 @@
 <?php
 
-// abreviaciones
+// shortcodes
 
-// Galería shortcode
+// Shortcode Galería
 
-// eliminar las abreviaciones estándar
+// elimina el shortcode estándar
 remove_shortcode('gallery', 'gallery_shortcode');
 add_shortcode('gallery', 'gallery_shortcode_tbs');
 
@@ -125,4 +125,8 @@ function blockquotes( $atts, $content = null ) {
 }
 
 add_shortcode('blockquote', 'blockquotes'); 
+ 
+
+
+
 ?>
