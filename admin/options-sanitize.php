@@ -76,7 +76,7 @@ function of_sanitize_upload( $input ) {
 }
 add_filter( 'of_sanitize_upload', 'of_sanitize_upload' );
 
-/* Allowed Tags */
+/* Etiquetas permitidas */
 
 function of_sanitize_allowedtags($input) {
 	global $allowedtags;
@@ -86,7 +86,7 @@ function of_sanitize_allowedtags($input) {
 
 add_filter( 'of_sanitize_info', 'of_sanitize_allowedtags' );
 
-/* Allowed Post Tags */
+/* Etiquetas de artículo permitidas */
 
 function of_sanitize_allowedposttags($input) {
 	global $allowedposttags;
@@ -97,7 +97,7 @@ function of_sanitize_allowedposttags($input) {
 add_filter( 'of_sanitize_info', 'of_sanitize_allowedposttags' );
 
 
-/* Check that the key value sent is valid */
+/* Verificar que el valor de la clave enviada es válido */
 
 function of_sanitize_enum( $input, $option ) {
 	$output = '';
@@ -156,7 +156,7 @@ function of_sanitize_background_attachment( $value ) {
 add_filter( 'of_background_attachment', 'of_sanitize_background_attachment' );
 
 
-/* Typography */
+/* Tipografía */
 
 function of_sanitize_typography( $input ) {
 	$output = wp_parse_args( $input, array(
@@ -222,7 +222,7 @@ function of_sanitize_font_face( $value ) {
 add_filter( 'of_font_face', 'of_sanitize_font_face' );
 
 /**
- * Get recognized background repeat settings
+ * Obtener las configuraciones reconocidas de repetición de fondo
  *
  * @return   array
  *
@@ -238,7 +238,7 @@ function of_recognized_background_repeat() {
 }
 
 /**
- * Get recognized background positions
+ * Obtener las configuraciones reconocidas de posición del fondo
  *
  * @return   array
  *
@@ -259,7 +259,7 @@ function of_recognized_background_position() {
 }
 
 /**
- * Get recognized background attachment
+ * Obtener las configuraciones reconocidas de background-attachment
  *
  * @return   array
  *
@@ -273,10 +273,10 @@ function of_recognized_background_attachment() {
 }
 
 /**
- * Sanitize a color represented in hexidecimal notation.
+ * Limpiar un color representado en notación Hexadecimal.
  *
- * @param    string    Color in hexidecimal notation. "#" may or may not be prepended to the string.
- * @param    string    The value that this function should return if it cannot be recognized as a color.
+ * @param    string    Color en notación hexadecimal. # puede o no ser antecedido por el string
+ * @param    string    El valor que esta función debe retornar si no puede ser reconocido como un color
  * @return   string
  *
  */
@@ -289,11 +289,10 @@ function of_sanitize_hex( $hex, $default = '' ) {
 }
 
 /**
- * Get recognized font sizes.
+ * Obtener los tamaños de fuente reconocidos.
  *
- * Returns an indexed array of all recognized font sizes.
- * Values are integers and represent a range of sizes from
- * smallest to largest.
+ * Retorna un array indexado de todos los tamaños de fuente reconocidos.
+ * Los valores son enteros y representan un rango de tamaños de menor a mayor.
  *
  * @return   array
  */
@@ -306,11 +305,10 @@ function of_recognized_font_sizes() {
 }
 
 /**
- * Get recognized font faces.
+ * Obtener los tipos de fuente reconocidos.
  *
- * Returns an array of all recognized font faces.
- * Keys are intended to be stored in the database
- * while values are ready for display in in html.
+ * Obtener los tipos de fuente reconocidos.
+ * Las claves son para almacenar en la base de datos.
  *
  * @return   array
  *
@@ -331,7 +329,7 @@ function of_recognized_font_faces() {
 }
 
 /**
- * Get recognized font styles.
+ * Obtener los estilos de fuente reconocidos.
  *
  * Returns an array of all recognized font styles.
  * Keys are intended to be stored in the database
