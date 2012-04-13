@@ -49,6 +49,9 @@ function bones_queue_js(){ if (!is_admin()){ if ( is_singular() AND comments_ope
 function bones_excerpt_more($more) {
 	global $post;
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 1bede8546aeb8a39b300e65f6b590358a91ce818
 	// edita aquí si lo deseas
 	return '...  <a href="'. get_permalink($post->ID) . '" class="more-link" title="Read '.get_the_title($post->ID).'">Read more &raquo;</a>';
 =======
@@ -86,9 +89,14 @@ function bones_theme_support() {
 			'main_nav' => 'El menú principal',   // barra de navegación principal en la cabecera
 			'footer_links' => 'Enlaces de pie de página' // barra de navegación secundaria en el pie de página
 =======
+<<<<<<< HEAD
+			'main_nav' => 'El menú principal',   // barra de navegación principal en la cabecera
+			'footer_links' => 'Enlaces de pie de página' // barra de navegación secundaria en el pie de página
+=======
 			'main_nav' => 'The Main Menu',   // main nav in header
 			'footer_links' => 'Enlaces del pie de Página' // secondary nav in footer
 >>>>>>> 4c55c64fca12d534352f71eba51e395cace07072
+>>>>>>> 1bede8546aeb8a39b300e65f6b590358a91ce818
 		)
 	);	
 }
@@ -165,8 +173,12 @@ function bones_related_posts() {
 <<<<<<< HEAD
             <li class="no_related_post">No hay entradas relacionadas aún!</li>
 =======
+<<<<<<< HEAD
+            <li class="no_related_post">No hay entradas relacionadas aún!</li>
+=======
             <li class="no_related_post">No hay posts relacionados a&uacute;n!</li>
 >>>>>>> 4c55c64fca12d534352f71eba51e395cace07072
+>>>>>>> 1bede8546aeb8a39b300e65f6b590358a91ce818
 		<?php }
 	}
 	wp_reset_query();
@@ -211,8 +223,12 @@ function page_navi($before = '', $after = '') {
 <<<<<<< HEAD
 		echo '<li class="prev"><a href="'.get_pagenum_link().'" title="Primero">'.$first_page_text.'</a></li>';
 =======
+<<<<<<< HEAD
+		echo '<li class="prev"><a href="'.get_pagenum_link().'" title="Primero">'.$first_page_text.'</a></li>';
+=======
 		echo '<li class="prev"><a href="'.get_pagenum_link().'" title="Primera">'.$first_page_text.'</a></li>';
 >>>>>>> 4c55c64fca12d534352f71eba51e395cace07072
+>>>>>>> 1bede8546aeb8a39b300e65f6b590358a91ce818
 	}
 		
 	$prevposts = get_previous_posts_link('&larr; Anterior');
