@@ -62,8 +62,12 @@ function bones_rss_dashboard_widget() {
 <<<<<<< HEAD
 	if ($limit == 0) echo '<div>El Feed RSS está vacío o no se encuentra disponible</div>';   // mensaje de reserva 
 =======
+<<<<<<< HEAD
+	if ($limit == 0) echo '<div>El Feed RSS está vacío o no se encuentra disponible</div>';   // mensaje de reserva 
+=======
 	if ($limit == 0) echo '<div>El Feed RSS está vacío o no disponible</div>';   // fallback message 
 >>>>>>> 4c55c64fca12d534352f71eba51e395cace07072
+>>>>>>> 1bede8546aeb8a39b300e65f6b590358a91ce818
 	else foreach ($items as $item) : ?>
 
 	<h4 style="margin-bottom: 0;">
@@ -126,10 +130,14 @@ function bones_custom_admin_footer() {
 <<<<<<< HEAD
 	echo '<span id="footer-thankyou">Desarrollado por <a href="http://tusitio.com" target="_blank">El nombre de tu sitio</a></span>. Construído usando <a href="http://themble.com/bones" target="_blank">Bones</a>.';
 =======
+<<<<<<< HEAD
+	echo '<span id="footer-thankyou">Desarrollado por <a href="http://tusitio.com" target="_blank">El nombre de tu sitio</a></span>. Construído usando <a href="http://themble.com/bones" target="_blank">Bones</a>.';
+=======
 	echo '<span id="footer-thankyou">
 		Desarrollador por <a href="http://yoursite.com" target="_blank">Tu sitio web</a></span>. 
 		Constru&iacute;do con <a href="http://themble.com/bones" target="_blank">Bones</a>.';
 >>>>>>> 4c55c64fca12d534352f71eba51e395cace07072
+>>>>>>> 1bede8546aeb8a39b300e65f6b590358a91ce818
 }
 
 // incluyéndolo en el área de administración
