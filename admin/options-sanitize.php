@@ -1,10 +1,10 @@
 <?php
 
-/* Text */
+/* Texto */
 
 add_filter( 'of_sanitize_text', 'sanitize_text_field' );
 
-/* Textarea */
+/* Area de texto */
 
 function of_sanitize_textarea($input) {
 	global $allowedposttags;
@@ -14,11 +14,11 @@ function of_sanitize_textarea($input) {
 
 add_filter( 'of_sanitize_textarea', 'of_sanitize_textarea' );
 
-/* Info */
+/* Información */
 
 add_filter( 'of_sanitize_info', 'of_sanitize_allowedposttags' );
 
-/* Select */
+/* Selección */
 
 add_filter( 'of_sanitize_select', 'of_sanitize_enum', 10, 2);
 
@@ -26,11 +26,11 @@ add_filter( 'of_sanitize_select', 'of_sanitize_enum', 10, 2);
 
 add_filter( 'of_sanitize_radio', 'of_sanitize_enum', 10, 2);
 
-/* Images */
+/* Imágenes */
 
 add_filter( 'of_sanitize_images', 'of_sanitize_enum', 10, 2);
 
-/* Checkbox */
+/* Casilla de verificación */
 
 function of_sanitize_checkbox( $input ) {
 	if ( $input ) {
@@ -42,7 +42,7 @@ function of_sanitize_checkbox( $input ) {
 }
 add_filter( 'of_sanitize_checkbox', 'of_sanitize_checkbox' );
 
-/* Multicheck */
+/* Lista de selección múltiple */
 
 function of_sanitize_multicheck( $input, $option ) {
 	$output = '';
@@ -60,11 +60,11 @@ function of_sanitize_multicheck( $input, $option ) {
 }
 add_filter( 'of_sanitize_multicheck', 'of_sanitize_multicheck', 10, 2 );
 
-/* Color Picker */
+/* Selección de color */
 
 add_filter( 'of_sanitize_color', 'of_sanitize_hex' );
 
-/* Uploader */
+/* Cargador */
 
 function of_sanitize_upload( $input ) {
 	$output = '';
@@ -107,7 +107,7 @@ function of_sanitize_enum( $input, $option ) {
 	return $output;
 }
 
-/* Background */
+/* Fondo */
 
 function of_sanitize_background( $input ) {
 	$output = wp_parse_args( $input, array(
@@ -229,10 +229,10 @@ add_filter( 'of_font_face', 'of_sanitize_font_face' );
  */
 function of_recognized_background_repeat() {
 	$default = array(
-		'no-repeat' => 'No Repetir',
-		'repeat-x'  => 'Repetir Horizontalmente',
-		'repeat-y'  => 'Repetir Verticalmente',
-		'repeat'    => 'Repetir Todo',
+		'no-repeat' => 'Sin repetir',
+		'repeat-x'  => 'Repetir horizontalmente',
+		'repeat-y'  => 'Repetir verticalmente',
+		'repeat'    => 'Repetir todo',
 		);
 	return apply_filters( 'of_recognized_background_repeat', $default );
 }
@@ -245,15 +245,15 @@ function of_recognized_background_repeat() {
  */
 function of_recognized_background_position() {
 	$default = array(
-		'top left'      => 'Superior Izquierda',
-		'top center'    => 'Superior Centrado',
-		'top right'     => 'Superior Derecha',
-		'center left'   => 'Centrado a la Izquierda',
+		'top left'      => 'Superior izquierda',
+		'top center'    => 'Superior centrado',
+		'top right'     => 'Superior derecha',
+		'center left'   => 'Centrado a la izquierda',
 		'center center' => 'Centrado vertical y horizontal',
-		'center right'  => 'Centrado a la Derecha',
-		'bottom left'   => 'Inferior Izquierda',
-		'bottom center' => 'Inferior Centrado',
-		'bottom right'  => 'Inferior a la Derecha'
+		'center right'  => 'Centrado a la derecha',
+		'bottom left'   => 'Inferior izquierda',
+		'bottom center' => 'Inferior centrado',
+		'bottom right'  => 'Inferior a la derecha'
 		);
 	return apply_filters( 'of_recognized_background_position', $default );
 }
@@ -266,8 +266,8 @@ function of_recognized_background_position() {
  */
 function of_recognized_background_attachment() {
 	$default = array(
-		'scroll' => 'Desplazamiento Normal',
-		'fixed'  => 'Fijo en un Lugar'
+		'scroll' => 'Desplazamiento normal',
+		'fixed'  => 'Fijo en un lugar'
 		);
 	return apply_filters( 'of_recognized_background_attachment', $default );
 }
@@ -275,7 +275,7 @@ function of_recognized_background_attachment() {
 /**
  * Limpiar un color representado en notación Hexadecimal.
  *
- * @param    string    Color en notación hexadecimal. # puede o no ser antecedido por el string
+ * @param    string    Color en notación hexadecimal. # puede o no ser antecedido por la cadena de texto
  * @param    string    El valor que esta función debe retornar si no puede ser reconocido como un color
  * @return   string
  *
@@ -291,7 +291,7 @@ function of_sanitize_hex( $hex, $default = '' ) {
 /**
  * Obtener los tamaños de fuente reconocidos.
  *
- * Retorna un array indexado de todos los tamaños de fuente reconocidos.
+ * Retorna un arreglo indexado de todos los tamaños de fuente reconocidos.
  * Los valores son enteros y representan un rango de tamaños de menor a mayor.
  *
  * @return   array
@@ -331,9 +331,9 @@ function of_recognized_font_faces() {
 /**
  * Obtener los estilos de fuente reconocidos.
  *
- * Returns an array of all recognized font styles.
- * Keys are intended to be stored in the database
- * while values are ready for display in in html.
+ * Retorna un arreglo de todos los estilos de fuente conocidos.
+ * Se intenta almacenar las claves en la base de datos
+ * mientras los valores están listos para ser mostrados en html.
  *
  * @return   array
  *
@@ -349,16 +349,16 @@ function of_recognized_font_styles() {
 }
 
 /**
- * Is a given string a color formatted in hexidecimal notation?
+ * Es la cadena de texto dada, un color en formato hexadecimal?
  *
- * @param    string    Color in hexidecimal notation. "#" may or may not be prepended to the string.
+ * @param    string    Color en formato hexadecimal. "#" puede o no estar antepuesto a la cadena de texto.
  * @return   bool
  *
  */
  
 function of_validate_hex( $hex ) {
 	$hex = trim( $hex );
-	/* Strip recognized prefixes. */
+	/* Destapa prefijos reconocidos */
 	if ( 0 === strpos( $hex, '#' ) ) {
 		$hex = substr( $hex, 1 );
 	}
