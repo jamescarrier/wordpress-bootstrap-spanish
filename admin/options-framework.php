@@ -226,7 +226,7 @@ function optionsframework_page() {
 		<?php echo $return[0]; /* Ajustes */ ?>
         
         <div id="optionsframework-submit">
-			<input type="submit" class="button-primary" name="update" value="<?php esc_attr_e( 'Guardar opciones' ); ?>" />
+			<input type="submit" class="button-primary" name="update" value="<?php esc_attr_e( 'Guardar ajustes' ); ?>" />
             <input type="submit" class="reset-button button-secondary" name="reset" value="<?php esc_attr_e( 'Restaurar opciones predeterminadas' ); ?>" onclick="return confirm( '<?php print esc_js( __( 'Haz click en "OK" para restaurar los cambios. Cualquier configuración anterior se perderá!','optionsframework' ) ); ?>' );" />
             <div class="clear"></div>
 		</div>
